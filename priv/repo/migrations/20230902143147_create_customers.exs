@@ -1,10 +1,10 @@
-defmodule JustGravel.Repo.Migrations.AddCustomersTable do
+defmodule FallsTravel.Repo.Migrations.CreateCustomers do
   use Ecto.Migration
 
   def up do
     create table(:customers, primary_key: false) do
       add :id, :binary_id, primary_key: true
-      add :name, :string
+      add :name, :string, null: false
 
       timestamps()
     end
