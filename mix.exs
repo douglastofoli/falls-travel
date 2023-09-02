@@ -44,6 +44,10 @@ defmodule FallsTravel.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
+      {:absinthe, "~> 1.7.0"},
+      {:absinthe_plug, "~> 1.5"},
+      {:decimal, "~> 2.1"},
+      {:crudry, "~> 2.4.0"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end
