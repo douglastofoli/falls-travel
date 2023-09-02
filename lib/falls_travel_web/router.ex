@@ -5,8 +5,14 @@ defmodule FallsTravelWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", FallsTravelWeb do
+  scope "/api" do
     pipe_through :api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL,
+      schema: FallsTravelWeb.Schema,
+      interface: :playground
+
+    forward "/", Absinthe.Plug, schema: FallsTravelWeb.Schema
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
