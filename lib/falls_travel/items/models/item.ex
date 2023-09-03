@@ -4,6 +4,8 @@ defmodule FallsTravel.Items.Models.Item do
   import Ecto.Changeset
 
   alias Ecto.Enum
+  alias FallsTravel.Carts.Models.Cart
+  alias FallsTravel.CartsItems.Models.CartItem
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -14,10 +16,10 @@ defmodule FallsTravel.Items.Models.Item do
   @items_type ~w(product service)a
 
   schema "items" do
-    field :name, :string
-    field :description, :string
-    field :type, Enum, values: @items_type
-    field :price, :decimal
+    field(:name, :string)
+    field(:description, :string)
+    field(:type, Enum, values: @items_type)
+    field(:price, :decimal)
 
     timestamps()
   end
@@ -26,6 +28,5 @@ defmodule FallsTravel.Items.Models.Item do
     item
     |> cast(attrs, @required_fields ++ @optional_fields)
     |> validate_required(@required_fields)
-    |> unique_constraint(:name)
   end
 end

@@ -4,7 +4,6 @@ defmodule FallsTravel.Items.Actions.Get do
 
   def all do
     Repo.all(Item)
-    |> IO.inspect()
   end
 
   def find(id) do

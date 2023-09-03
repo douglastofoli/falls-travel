@@ -5,16 +5,16 @@ defmodule FallsTravel.Repo.Migrations.CreateItems do
     execute "CREATE TYPE items_type AS ENUM ('product', 'service')", ""
 
     create table(:items, primary_key: false) do
-      add :id, :binary_id, primary_key: true
+      add :id, :binary_id, primary_key: true, default: fragment("gen_random_uuid()")
       add :name, :string, null: false
       add :description, :string, null: false
       add :type, :items_type, null: false
       add :price, :decimal, null: false
 
+      add :deleted_at, :utc_datetime
+
       timestamps()
     end
-
-    create unique_index(:items, [:name])
   end
 
   def down do

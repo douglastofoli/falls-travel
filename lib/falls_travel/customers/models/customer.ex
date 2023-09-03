@@ -3,7 +3,7 @@ defmodule FallsTravel.Customers.Models.Customer do
 
   import Ecto.Changeset
 
-  alias FallsTravel.ShoppingCarts.Models.ShoppingCart
+  alias FallsTravel.Carts.Models.Cart
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -14,17 +14,14 @@ defmodule FallsTravel.Customers.Models.Customer do
   schema "customers" do
     field :name, :string
 
-    has_many :shopping_carts, ShoppingCart
+    has_many :carts, Cart
 
     timestamps()
   end
 
   def changeset(customer \\ %__MODULE__{}, attrs) do
-    IO.inspect(attrs)
-
     customer
     |> cast(attrs, @required_fields ++ @optional_fields)
     |> validate_required(@required_fields)
-    |> unique_constraint(:name)
   end
 end

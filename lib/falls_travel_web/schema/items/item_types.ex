@@ -20,12 +20,6 @@ defmodule FallsTravelWeb.Schema.Items.ItemTypes do
     field(:price, :decimal)
   end
 
-  @desc "A item input to add to a shopping cart"
-  input_object :item_shopping_cart_input do
-    field(:id, :id)
-    field(:quantity, :integer)
-  end
-
   @desc "A item type"
   enum :item_type do
     value(:product)

@@ -3,13 +3,13 @@ defmodule FallsTravel.Repo.Migrations.CreateCustomers do
 
   def up do
     create table(:customers, primary_key: false) do
-      add :id, :binary_id, primary_key: true
+      add :id, :binary_id, primary_key: true, default: fragment("gen_random_uuid()")
       add :name, :string, null: false
+
+      add :deleted_at, :utc_datetime
 
       timestamps()
     end
-
-    create unique_index(:customers, [:name])
   end
 
   def down do

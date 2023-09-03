@@ -10,11 +10,12 @@ defmodule FallsTravelWeb.Schema do
   query do
     import_fields(:customers_queries)
     import_fields(:items_queries)
-    import_fields(:shopping_carts_queries)
+    import_fields(:carts_queries)
   end
 
   mutation do
+    import_fields(:carts_mutations)
+    import_fields(:carts_items_mutations)
     import_fields(:customers_mutations)
-    import_fields(:shopping_carts_mutations)
   end
 end

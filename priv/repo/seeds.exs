@@ -2,7 +2,7 @@ alias FallsTravel.Customers.Actions.Create, as: CreateCustomer
 alias FallsTravel.Customers.Models.Customer
 alias FallsTravel.Items.Actions.Create, as: CreateItem
 alias FallsTravel.Repo
-alias FallsTravel.ShoppingCarts.Actions.Create, as: CreateShoppingCart
+alias FallsTravel.Carts.Actions.Create, as: CreateCart
 
 customers = [
   %{
@@ -154,5 +154,5 @@ Customer
 |> Repo.all()
 |> Enum.map(fn customer ->
   %{status: :open, customer_id: customer.id}
-  |> CreateShoppingCart.call()
+  |> CreateCart.call()
 end)
