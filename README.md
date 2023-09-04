@@ -4,7 +4,7 @@ Bem-vindo a FallsTravel - Sua solução de viagem personalizada!
 
 ## Descrição
 
-FallsTravel é uma aplicação que permite a criação de carrinhos de compras e todo o fluxo de adicional, listar ou remover itens, seja serviços ou produtos.
+FallsTravel é uma aplicação que permite a criação de carrinhos de compras e todo o fluxo de adição, listagem e removeção dos itens, seja eles serviços ou produtos.
 
 ## Como Executar
 
