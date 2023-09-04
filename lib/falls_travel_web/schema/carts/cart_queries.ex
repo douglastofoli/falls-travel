@@ -6,7 +6,6 @@ defmodule FallsTravelWeb.Schema.Carts.CartQueries do
   object :carts_queries do
     field :cart, type: :cart do
       arg(:cart_id, non_null(:id))
-      arg(:payment_in_cash, non_null(:boolean))
 
       resolve(&CartResolver.find/3)
     end

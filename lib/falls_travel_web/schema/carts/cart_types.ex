@@ -7,6 +7,7 @@ defmodule FallsTravelWeb.Schema.Carts.CartTypes do
     field(:status, :status_type)
     field(:customer, :customer)
     field(:total_price, :decimal)
+    field(:total_price_with_discount, :decimal)
     field(:items, list_of(:item))
   end
 

@@ -15,11 +15,13 @@ defmodule FallsTravel.Carts.Models.Cart do
 
   @cart_status_type ~w(open in_checkout completed empty canceled)a
 
-  @derive {Jason.Encoder, only: @required_fields ++ [:id, :items, :total_price]}
+  @derive {Jason.Encoder,
+           only: @required_fields ++ [:id, :items, :total_price, :total_price_with_discount]}
 
   schema "carts" do
     field(:status, Enum, values: @cart_status_type)
     field :total_price, :decimal, default: 0.0, virtual: true
+    field :total_price_with_discount, :decimal, default: 0.0, virtual: true
 
     belongs_to(:customer, Customer)
     many_to_many :items, Item, join_through: CartItem

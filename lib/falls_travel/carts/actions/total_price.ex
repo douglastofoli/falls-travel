@@ -8,12 +8,12 @@ defmodule FallsTravel.Carts.Actions.TotalPrice do
     %Cart{cart | total_price: total_price}
   end
 
-  def apply_discount(%Cart{total_price: total_price} = cart, %{payment_in_cash: true}) do
+  def apply_discount(%Cart{total_price: total_price} = cart) do
     discount = Decimal.new("0.10")
     discount_price = Decimal.mult(total_price, discount)
     total_price = Decimal.sub(total_price, discount_price)
 
-    %Cart{cart | total_price: total_price}
+    %Cart{cart | total_price_with_discount: total_price}
   end
 
   def apply_discount(%Cart{} = cart, %{payment_in_cash: false}), do: cart
