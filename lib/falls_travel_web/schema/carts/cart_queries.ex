@@ -5,6 +5,7 @@ defmodule FallsTravelWeb.Schema.Carts.CartQueries do
 
   use Absinthe.Schema.Notation
 
+  alias Crudry.Middlewares.TranslateErrors
   alias FallsTravelWeb.Resolvers.Carts, as: CartResolver
 
   object :carts_queries do
@@ -16,6 +17,7 @@ defmodule FallsTravelWeb.Schema.Carts.CartQueries do
       arg(:cart_id, non_null(:id))
 
       resolve(&CartResolver.find/3)
+      middleware(TranslateErrors)
     end
   end
 end

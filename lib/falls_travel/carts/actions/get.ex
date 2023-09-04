@@ -6,11 +6,11 @@ defmodule FallsTravel.Carts.Actions.Get do
   alias FallsTravel.Carts.Actions.TotalPrice
   alias FallsTravel.Carts.Models.Cart
   alias FallsTravel.Carts.Queries.CartQueries
-  alias FallsTravel.{Error, Repo}
+  alias FallsTravel.Repo
 
   def call(id) do
     case Repo.get(Cart, id) do
-      nil -> {:error, Error.build_cart_not_found_error()}
+      nil -> {:error, "Cart ID #{id} not found"}
       %Cart{} = cart -> {:ok, handle_get(cart)}
     end
   end
