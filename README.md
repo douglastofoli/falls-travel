@@ -54,6 +54,10 @@ FallsTravel é uma aplicação que permite a criação de carrinhos de compras e
 
 Acesso da API através da URL `http://localhost:4000/api/graphiql`.
 
+## Insomnia
+
+Na raiz do projeto, há um JSON do Insomnia com todas as requests criadas e testadas por mim.
+
 ## Queries
 
 As queries podem ser vistas no diretório de documentação em [Queries](https://github.com/douglastofoli/falls-travel/blob/main/docs/queries.md).
