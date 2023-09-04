@@ -9,6 +9,13 @@ defmodule FallsTravelWeb.Schema.Carts.CartMutations do
   alias FallsTravelWeb.Resolvers.Carts, as: CartResolver
 
   object :carts_mutations do
+    field :create_cart, type: :cart do
+      arg(:input, non_null(:cart_input_without_items))
+
+      resolve(&CartResolver.create/3)
+      middleware(TranslateErrors)
+    end
+
     field :add_item_to_cart, type: :cart do
       arg(:cart_id, non_null(:id))
       arg(:items, non_null(list_of(:add_item_to_cart_input)))

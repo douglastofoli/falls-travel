@@ -15,11 +15,17 @@ defmodule FallsTravelWeb.Schema.Carts.CartTypes do
     field(:items, list_of(:item))
   end
 
-  @desc "A item input"
+  @desc "A cart input"
   input_object :cart_input do
     field(:status, non_null(:status_type))
     field(:customer_id, non_null(:id))
     field(:items, non_null(list_of(:add_item_to_cart_input)))
+  end
+
+  @desc "A cart input without items"
+  input_object :cart_input_without_items do
+    field(:status, non_null(:status_type))
+    field(:customer_id, non_null(:id))
   end
 
   @desc "A cart status type"
