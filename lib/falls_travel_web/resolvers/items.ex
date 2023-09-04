@@ -1,5 +1,9 @@
 defmodule FallsTravelWeb.Resolvers.Items do
-  alias FallsTravel.Items.Actions.{Create, Get, Update, Delete}
+  @moduledoc """
+  Resolver to handle items queries and mutations.
+  """
+
+  alias FallsTravel.Items.Actions.{Create, Get, Update}
 
   def all(_parent, _args, _resolution) do
     {:ok, Get.all()}

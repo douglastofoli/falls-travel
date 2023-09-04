@@ -1,4 +1,8 @@
 defmodule FallsTravel.Carts.Actions.ValidateAndMultiplyItems do
+  @moduledoc """
+  Carts actions to validate if item exists and multiply it quantity.
+  """
+
   def call(items, items_ids, items_params) do
     items_map = Map.new(items, fn item -> {item.id, item} end)
 

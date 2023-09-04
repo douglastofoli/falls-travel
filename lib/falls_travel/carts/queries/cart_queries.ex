@@ -1,4 +1,8 @@
 defmodule FallsTravel.Carts.Queries.CartQueries do
+  @moduledoc """
+  Carts queries to get rows from database.
+  """
+
   import Ecto.Query
 
   alias FallsTravel.Carts.Models.Cart

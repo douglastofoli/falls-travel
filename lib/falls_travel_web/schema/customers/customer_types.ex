@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema.Customers.CustomerTypes do
+  @moduledoc """
+  Customer types.
+  """
+
   use Absinthe.Schema.Notation
 
   @desc "A customer of the application"

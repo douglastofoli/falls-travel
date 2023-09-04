@@ -1,4 +1,8 @@
 defmodule FallsTravel.Carts.Actions.Update do
+  @moduledoc """
+  Carts actions to update rows in database.
+  """
+
   alias FallsTravel.Carts.Actions.Get
   alias FallsTravel.Carts.Models.Cart
   alias FallsTravel.Repo

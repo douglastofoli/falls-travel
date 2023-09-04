@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema.Customers.CustomerMutations do
+  @moduledoc """
+  Customer mutations.
+  """
+
   use Absinthe.Schema.Notation
 
   alias Crudry.Middlewares.TranslateErrors

@@ -1,4 +1,8 @@
 defmodule FallsTravel.Carts.Actions.TotalPrice do
+  @moduledoc """
+  Carts actions to calculate and apply discount to products price.
+  """
+
   alias FallsTravel.Carts.Models.Cart
   alias FallsTravel.Items.Models.Item
 

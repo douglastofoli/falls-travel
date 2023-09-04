@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema.Customers.CustomerQueries do
+  @moduledoc """
+  Customer queries.
+  """
+
   use Absinthe.Schema.Notation
 
   alias FallsTravelWeb.Resolvers.Customers, as: CustomerResolver

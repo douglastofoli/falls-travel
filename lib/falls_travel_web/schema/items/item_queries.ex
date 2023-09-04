@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema.Items.ItemQueries do
+  @moduledoc """
+  Item queries.
+  """
+
   use Absinthe.Schema.Notation
 
   alias FallsTravelWeb.Resolvers.Items, as: ItemResolver

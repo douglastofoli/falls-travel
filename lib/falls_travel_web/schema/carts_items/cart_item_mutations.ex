@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema.CartsItems.CartItemMutations do
+  @moduledoc """
+  CartItem mutations.
+  """
+
   use Absinthe.Schema.Notation
 
   alias Crudry.Middlewares.TranslateErrors

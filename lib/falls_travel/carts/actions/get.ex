@@ -1,4 +1,8 @@
 defmodule FallsTravel.Carts.Actions.Get do
+  @moduledoc """
+  Carts actions to retrieve rows from database.
+  """
+
   alias FallsTravel.Carts.Actions.TotalPrice
   alias FallsTravel.Carts.Models.Cart
   alias FallsTravel.Carts.Queries.CartQueries

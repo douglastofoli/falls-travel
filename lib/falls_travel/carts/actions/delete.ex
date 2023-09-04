@@ -1,7 +1,9 @@
 defmodule FallsTravel.Carts.Actions.Delete do
-  alias FallsTravel.Carts.Actions.{Get, Update}
-  alias FallsTravel.Carts.Models.Cart
-  alias FallsTravel.{Error, Repo}
+  @moduledoc """
+  Carts actions to delete rows from database.
+  """
+
+  alias FallsTravel.Carts.Actions.Update
 
   def call(id) do
     attrs = %{

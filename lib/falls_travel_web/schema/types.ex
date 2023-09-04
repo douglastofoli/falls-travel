@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema.Types do
+  @moduledoc """
+  Module that imports all types.
+  """
+
   use Absinthe.Schema.Notation
 
   alias FallsTravelWeb.Schema.Carts.CartTypes

@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema.CartsItems.CartItemTypes do
+  @moduledoc """
+  CartItem types.
+  """
+
   use Absinthe.Schema.Notation
 
   @desc "A cart of the application"

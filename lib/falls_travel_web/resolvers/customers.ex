@@ -1,5 +1,9 @@
 defmodule FallsTravelWeb.Resolvers.Customers do
-  alias FallsTravel.Customers.Actions.{Create, Get, Update, Delete}
+  @moduledoc """
+  Resolver to handle customers queries and mutations.
+  """
+
+  alias FallsTravel.Customers.Actions.{Create, Get, Update}
 
   def find(_parent, %{id: id}, _resolution) do
     case Get.find(id) do

@@ -1,4 +1,8 @@
 defmodule FallsTravel.Items.Actions.Create do
+  @moduledoc """
+  Items actions to insert rows into database.
+  """
+
   alias FallsTravel.Items.Models.Item
   alias FallsTravel.Repo
 

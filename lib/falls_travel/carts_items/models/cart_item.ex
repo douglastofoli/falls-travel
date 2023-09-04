@@ -1,9 +1,11 @@
 defmodule FallsTravel.CartsItems.Models.CartItem do
+  @moduledoc false
+
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias FallsTravel.Items.Models.Item
   alias FallsTravel.Carts.Models.Cart
+  alias FallsTravel.Items.Models.Item
 
   @primary_key false
   @foreign_key_type :binary_id

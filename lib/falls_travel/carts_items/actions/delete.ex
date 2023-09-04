@@ -1,8 +1,12 @@
 defmodule FallsTravel.CartsItems.Actions.Delete do
+  @moduledoc """
+  CartsItems actions to delete rows from database.
+  """
+
   import Ecto.Query
 
-  alias FallsTravel.Carts.Models.Cart
   alias FallsTravel.Carts.Actions.Get, as: GetCart
+  alias FallsTravel.Carts.Models.Cart
   alias FallsTravel.CartsItems.Models.CartItem
   alias FallsTravel.{Error, Repo}
 

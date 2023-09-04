@@ -1,4 +1,8 @@
 defmodule FallsTravel.Items.Actions.Update do
+  @moduledoc """
+  Items actions to update rows in database.
+  """
+
   alias FallsTravel.Items.Actions.Get
   alias FallsTravel.Items.Models.Item
   alias FallsTravel.Repo

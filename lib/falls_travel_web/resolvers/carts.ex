@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Resolvers.Carts do
+  @moduledoc """
+  Resolver to handle carts queries and mutations.
+  """
+
   alias FallsTravel.Carts.Actions.{Create, Delete, Get}
 
   def all(_parent, _args, _resolution) do

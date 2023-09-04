@@ -1,4 +1,8 @@
 defmodule FallsTravel.Customers.Actions.Update do
+  @moduledoc """
+  Customers actions to update rows in database.
+  """
+
   alias FallsTravel.Customers.Actions.Get
   alias FallsTravel.Customers.Models.Customer
   alias FallsTravel.Repo

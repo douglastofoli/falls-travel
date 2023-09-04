@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema.Items.ItemTypes do
+  @moduledoc """
+  Item types.
+  """
+
   use Absinthe.Schema.Notation
 
   import_types(Absinthe.Type.Custom)

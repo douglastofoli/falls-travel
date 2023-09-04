@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema.Carts.CartQueries do
+  @moduledoc """
+  Cart queries.
+  """
+
   use Absinthe.Schema.Notation
 
   alias FallsTravelWeb.Resolvers.Carts, as: CartResolver

@@ -1,4 +1,8 @@
 defmodule FallsTravel.Customers.Actions.Delete do
+  @moduledoc """
+  Customers actions to delete rows from database.
+  """
+
   alias FallsTravel.Customers.Models.Customer
   alias FallsTravel.Repo
 

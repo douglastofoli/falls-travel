@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema do
+  @moduledoc """
+  Module that imports all types, queries and mutations. This is the main schema.
+  """
+
   use Absinthe.Schema
 
   alias FallsTravelWeb.Schema.{Mutations, Queries, Types}

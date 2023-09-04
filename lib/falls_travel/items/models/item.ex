@@ -1,4 +1,6 @@
 defmodule FallsTravel.Items.Models.Item do
+  @moduledoc false
+
   use Ecto.Schema
 
   import Ecto.Changeset

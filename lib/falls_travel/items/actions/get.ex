@@ -1,4 +1,8 @@
 defmodule FallsTravel.Items.Actions.Get do
+  @moduledoc """
+  Items actions to retrieve rows from database.
+  """
+
   alias FallsTravel.Items.Models.Item
   alias FallsTravel.Repo
 

@@ -8,7 +8,7 @@ import Config
 config :falls_travel, FallsTravel.Repo,
   username: "postgres",
   password: "postgres",
-  hostname: "falls_travel_db",
+  hostname: "localhost",
   database: "falls_travel_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10

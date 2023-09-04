@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema.Mutations do
+  @moduledoc """
+  Module that imports all mutations.
+  """
+
   use Absinthe.Schema.Notation
 
   alias FallsTravelWeb.Schema.Carts.CartMutations

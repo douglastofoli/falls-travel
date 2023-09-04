@@ -1,4 +1,8 @@
 defmodule FallsTravel.Carts.Actions.Create do
+  @moduledoc """
+  Carts actions to insert rows into database.
+  """
+
   import Ecto.Query
 
   alias FallsTravel.Carts.Actions.{Get, ValidateAndMultiplyItems}

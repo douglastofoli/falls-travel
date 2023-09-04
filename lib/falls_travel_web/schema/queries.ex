@@ -1,4 +1,8 @@
 defmodule FallsTravelWeb.Schema.Queries do
+  @moduledoc """
+  Module that imports all queries.
+  """
+
   use Absinthe.Schema.Notation
 
   alias FallsTravelWeb.Schema.Carts.CartQueries
