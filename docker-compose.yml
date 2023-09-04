@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  falls_travel_app:
+    container_name: falls_travel_app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    depends_on:
+      - falls_travel_db
+    networks:
+      - falls_travel_network
+
+  falls_travel_db:
+    container_name: falls_travel_db
+    image: postgres:15.4
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - falls_travel_network
+
+networks:
+  falls_travel_network:
+    name: falls_travel_network
