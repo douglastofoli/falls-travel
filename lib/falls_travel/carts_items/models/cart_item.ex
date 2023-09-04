@@ -12,10 +12,8 @@ defmodule FallsTravel.CartsItems.Models.CartItem do
   @optional_fields ~w()a
 
   schema "carts_items" do
-    field(:quantity, :integer)
-
-    belongs_to(:cart, Cart, primary_key: true)
-    belongs_to(:item, Item, primary_key: true)
+    belongs_to(:cart, Cart)
+    belongs_to(:item, Item)
   end
 
   def build(attrs) do

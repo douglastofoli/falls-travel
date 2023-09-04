@@ -153,6 +153,5 @@ end)
 Customer
 |> Repo.all()
 |> Enum.map(fn customer ->
-  %{status: :open, customer_id: customer.id}
-  |> CreateCart.call()
+  CreateCart.call(%{customer_id: customer.id, status: :open, items: []})
 end)

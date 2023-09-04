@@ -15,26 +15,23 @@ defmodule FallsTravel.Carts.Models.Cart do
 
   @cart_status_type ~w(open in_checkout completed empty canceled)a
 
+  @derive {Jason.Encoder, only: @required_fields ++ [:id, :items, :total_price]}
+
   schema "carts" do
     field(:status, Enum, values: @cart_status_type)
+    field :total_price, :decimal, default: 0.0, virtual: true
 
     belongs_to(:customer, Customer)
-    has_many(:carts_items, CartItem)
-    has_many(:items, through: [:carts_items, :item])
+    many_to_many :items, Item, join_through: CartItem
 
     timestamps()
   end
 
-  def build(attrs) do
-    attrs
-    |> changeset()
-    |> apply_action(:insert)
-  end
-
-  def changeset(cart \\ %__MODULE__{}, attrs) do
+  def changeset(cart \\ %__MODULE__{}, attrs, items) do
     cart
     |> cast(attrs, @required_fields ++ @optional_fields)
-    |> cast_assoc(:carts_items, required: true, with: &CartItem.changeset/2)
+    |> IO.inspect()
     |> validate_required(@required_fields)
+    |> put_assoc(:items, items)
   end
 end

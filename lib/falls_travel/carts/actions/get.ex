@@ -1,12 +1,13 @@
 defmodule FallsTravel.Carts.Actions.Get do
+  alias FallsTravel.Carts.Actions.TotalPrice
   alias FallsTravel.Carts.Models.Cart
   alias FallsTravel.Carts.Queries.CartQueries
   alias FallsTravel.{Error, Repo}
 
-  def call(id) do
-    case Repo.get(Cart, id) do
+  def call(attrs) do
+    case Repo.get(Cart, attrs.cart_id) do
       nil -> {:error, Error.build_cart_not_found_error()}
-      cart -> {:ok, cart}
+      %Cart{} = cart -> handle_get(cart, attrs)
     end
   end
 
@@ -26,5 +27,15 @@ defmodule FallsTravel.Carts.Actions.Get do
     customer_id
     |> CartQueries.by_customer_id()
     |> Repo.one()
+  end
+
+  defp handle_get(cart, attrs) do
+    result =
+      cart
+      |> Repo.preload([:items, :customer])
+      |> TotalPrice.calculate()
+      |> TotalPrice.apply_discount(attrs)
+
+    {:ok, result}
   end
 end

@@ -15,11 +15,15 @@ defmodule FallsTravel.Items.Models.Item do
 
   @items_type ~w(product service)a
 
+  @derive {Jason.Encoder, only: @required_fields ++ [:id]}
+
   schema "items" do
     field(:name, :string)
     field(:description, :string)
     field(:type, Enum, values: @items_type)
     field(:price, :decimal)
+
+    many_to_many :carts, Cart, join_through: CartItem
 
     timestamps()
   end
