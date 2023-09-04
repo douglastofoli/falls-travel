@@ -4,7 +4,7 @@ import Config
 config :falls_travel, FallsTravel.Repo,
   username: "postgres",
   password: "postgres",
-  hostname: "localhost",
+  hostname: "falls_travel_db",
   database: "falls_travel_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
