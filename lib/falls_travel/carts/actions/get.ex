@@ -23,12 +23,6 @@ defmodule FallsTravel.Carts.Actions.Get do
     |> Repo.one()
   end
 
-  def status_open_by_customer_id(customer_id) do
-    customer_id
-    |> CartQueries.by_customer_id()
-    |> Repo.one()
-  end
-
   defp handle_get(cart) do
     result =
       cart

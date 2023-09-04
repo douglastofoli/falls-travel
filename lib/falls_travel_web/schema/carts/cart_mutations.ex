@@ -12,5 +12,12 @@ defmodule FallsTravelWeb.Schema.Carts.CartMutations do
       resolve(&CartResolver.add_item/3)
       middleware(TranslateErrors)
     end
+
+    field :delete_cart, type: :cart do
+      arg(:cart_id, non_null(:id))
+
+      resolve(&CartResolver.delete_cart/3)
+      middleware(TranslateErrors)
+    end
   end
 end

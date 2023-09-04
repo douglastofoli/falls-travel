@@ -1,5 +1,5 @@
 defmodule FallsTravelWeb.Resolvers.Carts do
-  alias FallsTravel.Carts.Actions.{Create, Get}
+  alias FallsTravel.Carts.Actions.{Create, Delete, Get}
 
   def find(_parent, %{cart_id: cart_id}, _resolution) do
     Get.call(cart_id)
@@ -10,5 +10,9 @@ defmodule FallsTravelWeb.Resolvers.Carts do
       {:ok, carts} -> {:ok, carts}
       {:error, changeset} -> {:error, changeset}
     end
+  end
+
+  def delete_cart(_parent, %{cart_id: cart_id}, _resolution) do
+    Delete.call(cart_id)
   end
 end

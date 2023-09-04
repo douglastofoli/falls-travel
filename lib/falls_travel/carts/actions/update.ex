@@ -12,7 +12,7 @@ defmodule FallsTravel.Carts.Actions.Update do
 
   defp do_update(cart, attrs) do
     cart
-    |> Cart.changeset(attrs)
+    |> Cart.changeset(attrs, [])
     |> Repo.update()
   end
 end
