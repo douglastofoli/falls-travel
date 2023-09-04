@@ -48,6 +48,7 @@ defmodule FallsTravel.MixProject do
       {:absinthe_plug, "~> 1.5"},
       {:decimal, "~> 2.1"},
       {:crudry, "~> 2.4.0"},
+      {:ex_machina, "~> 2.7.0", only: :test},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end
