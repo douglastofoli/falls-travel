@@ -4,6 +4,10 @@ defmodule FallsTravelWeb.Schema.Carts.CartQueries do
   alias FallsTravelWeb.Resolvers.Carts, as: CartResolver
 
   object :carts_queries do
+    field :carts, list_of(:cart) do
+      resolve(&CartResolver.all/3)
+    end
+
     field :cart, type: :cart do
       arg(:cart_id, non_null(:id))
 

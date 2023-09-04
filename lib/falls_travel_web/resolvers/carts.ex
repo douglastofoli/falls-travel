@@ -1,6 +1,10 @@
 defmodule FallsTravelWeb.Resolvers.Carts do
   alias FallsTravel.Carts.Actions.{Create, Delete, Get}
 
+  def all(_parent, _args, _resolution) do
+    Get.all()
+  end
+
   def find(_parent, %{cart_id: cart_id}, _resolution) do
     Get.call(cart_id)
   end

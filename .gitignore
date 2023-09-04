@@ -26,5 +26,6 @@ erl_crash.dump
 falls_travel-*.tar
 
 /.direnv/
+/.elixir_ls/
 /.nix-shell/
 /.postgres/

@@ -7,8 +7,17 @@ defmodule FallsTravel.Carts.Actions.Get do
   def call(id) do
     case Repo.get(Cart, id) do
       nil -> {:error, Error.build_cart_not_found_error()}
-      %Cart{} = cart -> handle_get(cart)
+      %Cart{} = cart -> {:ok, handle_get(cart)}
     end
+  end
+
+  def all do
+    result =
+      Cart
+      |> Repo.all()
+      |> Enum.map(&handle_get/1)
+
+    {:ok, result}
   end
 
   def find(id) do
@@ -24,12 +33,9 @@ defmodule FallsTravel.Carts.Actions.Get do
   end
 
   defp handle_get(cart) do
-    result =
-      cart
-      |> Repo.preload([:items, :customer])
-      |> TotalPrice.calculate()
-      |> TotalPrice.apply_discount()
-
-    {:ok, result}
+    cart
+    |> Repo.preload([:items, :customer])
+    |> TotalPrice.calculate()
+    |> TotalPrice.apply_discount()
   end
 end
